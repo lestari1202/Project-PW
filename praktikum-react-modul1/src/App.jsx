@@ -5,7 +5,7 @@ import ItemMatkul from "./ItemMatkul";
 import KartuProyek from "./KartuProyek";
 
 function App() {
-  // Data Daftar Praktikum (Tugas 2)
+  // Data Daftar Praktikum (Tugas 2) yang berisi array objek mata kuliah praktikum
   const daftarPraktikum = [
     {
       id: 101,
@@ -37,7 +37,7 @@ function App() {
     },
   ];
 
-  // Data Daftar Skill (Tugas 1)
+  // Data Daftar Skill (Tugas 1) yang menyimpan informasi keahlian dan levelnya
   const daftarSkill = [
     { id: 1, namaSkill: "PHP", level: "Pemula" },
     { id: 2, namaSkill: "HTML & CSS", level: "Menengah" },
@@ -46,7 +46,7 @@ function App() {
     { id: 5, namaSkill: "GitHub", level: "Pemula" },
   ];
 
-  // Data Portofolio Mini (Tugas 3)
+  // Data Portofolio Mini (Tugas 3) yang berisi daftar proyek beserta detail dan link GitHub
   const daftarProyek = [
     {
       id: 1,
@@ -82,6 +82,7 @@ function App() {
     },
   ];
 
+  // Fungsi event handler untuk menampilkan alert pop-up ketika tombol sapaan diklik
   const notifikasiSapaan = () => {
     alert(
       "Selamat datang di showcase proyek portofolio Mini Lestari Vebrianti!",
@@ -102,6 +103,7 @@ function App() {
         textAlign: "center",
       }}
     >
+      {/* Header utama halaman */}
       <header style={{ marginBottom: "32px", width: "100%" }}>
         <h1 style={{ color: "#1B365D", margin: "30px 0 8px 0" }}>
           Praktikum Web
@@ -133,6 +135,7 @@ function App() {
             marginTop: "16px",
           }}
         >
+          {/* Pemanggilan komponen KartuProfil dengan props data mahasiswa */}
           <KartuProfil
             nama="Lestari Vebrianti"
             npm="243040044"
@@ -161,6 +164,7 @@ function App() {
               gap: "8px",
             }}
           >
+            {/* Melakukan Looping data daftarSkill untuk merender komponen BadgeSkill */}
             {daftarSkill.map((s) => (
               <BadgeSkill key={s.id} namaSkill={s.namaSkill} level={s.level} />
             ))}
@@ -189,6 +193,7 @@ function App() {
             marginTop: "16px",
           }}
         >
+          {/* Melakukan Looping data daftarPraktikum untuk merender komponen ItemMatkul */}
           {daftarPraktikum.map((matkul) => (
             <div key={matkul.id} style={{ width: "100%", maxWidth: "600px" }}>
               <ItemMatkul
@@ -224,6 +229,7 @@ function App() {
             marginTop: "16px",
           }}
         >
+          {/* Melakukan Looping data daftarProyek untuk merender komponen KartuProyek */}
           {daftarProyek.map((proyek) => (
             <KartuProyek
               key={proyek.id}
@@ -245,6 +251,7 @@ function App() {
           width: "100%",
         }}
       >
+        {/* Tombol interaktif yang memanggil fungsi notifikasiSapaan saat diklik */}
         <button
           onClick={notifikasiSapaan}
           style={{

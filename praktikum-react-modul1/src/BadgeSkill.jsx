@@ -1,7 +1,8 @@
 import React from "react";
 
+// Komponen BadgeSkill menerima props 'namaSkill' dan 'level' untuk menampilkan badge keahlian
 function BadgeSkill({ namaSkill, level }) {
-  // Penentuan warna badge berdasarkan level keahlian
+  // Fungsi helper untuk menentukan warna latar belakang, teks, dan border berdasarkan level keahlian
   const getBadgeStyle = (lvl) => {
     switch (lvl?.toLowerCase()) {
       case "mahir":
@@ -10,13 +11,16 @@ function BadgeSkill({ namaSkill, level }) {
         return { bg: "#CCE5FF", text: "#004085", border: "#B8DAFF" };
       case "pemula":
       default:
+        // Warna default jika level tidak cocok atau merupakan pemula
         return { bg: "#FFF3CD", text: "#856404", border: "#FFEEBA" };
     }
   };
 
+  // Menyimpan hasil konfigurasi objek warna berdasarkan nilai props level
   const style = getBadgeStyle(level);
 
   return (
+    // Elemen span sebagai wadah utama badge dengan styling dinamis
     <span
       style={{
         display: "inline-block",
@@ -30,7 +34,9 @@ function BadgeSkill({ namaSkill, level }) {
         border: `1px solid ${style.border}`,
       }}
     >
-      {namaSkill} • <small style={{ fontWeight: "normal" }}>{level}</small>
+      {/* Menampilkan nama skill diikuti dengan tag small untuk menampilkan level secara dinamis */}
+      - {namaSkill}
+      <small style={{ fontWeight: "normal" }}>{level}</small>
     </span>
   );
 }

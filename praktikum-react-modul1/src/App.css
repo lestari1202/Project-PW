@@ -1,11 +1,12 @@
+/* Pengaturan kontainer root dengan batas lebar maksimum, posisi di tengah, padding, dan teks rata tengah */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-
 }
 
+/* Pengaturan gaya dasar untuk elemen logo dengan efek transisi filter */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -19,6 +20,7 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* Definisi animasi keyframes untuk memutar logo secara terus menerus (spinning) */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -28,16 +30,19 @@
   }
 }
 
+/* Menjalankan animasi putar pada logo kedua jika pengaturan perangkat pengguna mengizinkan gerakan */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
+/* Pengaturan padding untuk elemen kartu (card) */
 .card {
   padding: 2em;
 }
 
+/* Pengaturan warna teks khusus untuk petunjuk dokumentasi */
 .read-the-docs {
   color: #888;
 }

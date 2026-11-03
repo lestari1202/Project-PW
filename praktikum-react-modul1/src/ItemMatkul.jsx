@@ -1,7 +1,9 @@
 import React from "react";
 
+// Komponen ItemMatkul menerima props 'kode', 'nama', 'sks', dan 'hari' untuk menampilkan informasi detail setiap praktikum
 function ItemMatkul({ kode, nama, sks, hari }) {
   return (
+    // Wadah utama card item mata kuliah dengan tata letak flexbox dan border samping berwarna pink
     <div
       style={{
         padding: "14px 18px",
@@ -14,9 +16,13 @@ function ItemMatkul({ kode, nama, sks, hari }) {
         marginBottom: "8px",
       }}
     >
+      {/* Bagian kiri untuk menampilkan kode, nama mata kuliah, dan jadwal hari */}
       <div>
-        <span style={{ fontWeight: "bold", color: "#1B365D" }}>{kode}</span> -{" "}
-        {nama}
+        {/* Menampilkan kode praktikum dengan cetak tebal dan warna biru */}
+        <span style={{ fontWeight: "bold", color: "#1B365D" }}>
+          {kode}
+        </span> - {nama}
+        {/* Sub-elemen untuk menampilkan informasi jadwal hari praktikum */}
         <div
           style={{
             fontSize: "12px",
@@ -28,6 +34,7 @@ function ItemMatkul({ kode, nama, sks, hari }) {
           Jadwal Sesi: {hari}
         </div>
       </div>
+      {/* Bagian kanan untuk menampilkan badge jumlah SKS praktikum */}
       <span
         style={{
           backgroundColor: "#E1E4E8",

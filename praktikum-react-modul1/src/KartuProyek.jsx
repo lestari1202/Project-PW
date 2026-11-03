@@ -1,7 +1,9 @@
 import React from "react";
 
+// Komponen KartuProyek menerima props 'judul', 'deskripsi', 'teknologi', dan 'linkGithub' untuk menampilkan detail proyek
 function KartuProyek({ judul, deskripsi, teknologi, linkGithub }) {
   return (
+    // Wadah utama kartu proyek menggunakan tata letak flexbox dengan border tebal dan efek bayangan
     <div
       style={{
         border: "5px solid #f6d3e3",
@@ -14,8 +16,11 @@ function KartuProyek({ judul, deskripsi, teknologi, linkGithub }) {
         boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
       }}
     >
+      {/* Sub-kontainer untuk menampung judul, deskripsi, dan daftar teknologi */}
       <div>
+        {/* Menampilkan judul proyek dengan warna biru tua */}
         <h3 style={{ margin: "0 0 8px 0", color: "#1B365D" }}>{judul}</h3>
+        {/* Menampilkan teks deskripsi proyek */}
         <p
           style={{
             fontSize: "14px",
@@ -37,6 +42,7 @@ function KartuProyek({ judul, deskripsi, teknologi, linkGithub }) {
             justifyContent: "center",
           }}
         >
+          {/* Melakukan Looping pada array teknologi untuk merender tag badge teknologi */}
           {teknologi.map((tech, index) => (
             <span
               key={index}
@@ -55,6 +61,7 @@ function KartuProyek({ judul, deskripsi, teknologi, linkGithub }) {
         </div>
       </div>
 
+      {/* Tautan tombol untuk mengarahkan pengguna ke repositori GitHub terkait */}
       <a
         href={linkGithub}
         target="_blank"
